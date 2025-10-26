@@ -7,69 +7,106 @@
   <style>
     body {
       font-family: 'Helvetica Neue', sans-serif;
-      background: linear-gradient(to bottom, #fefcea, #f1da36);
+      background: linear-gradient(to bottom, #fff8dc, #ffeaa7);
       color: #333;
       margin: 0;
       padding: 0;
+      line-height: 1.6;
     }
+
     header {
       background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
       background-size: cover;
       background-position: center;
       color: white;
       text-align: center;
-      padding: 4rem 2rem;
+      padding: 5rem 2rem;
+      box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.3);
     }
+
     header h1 {
-      font-size: 2.8rem;
+      font-size: 3rem;
       margin: 0;
+      letter-spacing: 1px;
     }
+
     header h2 {
       font-weight: 400;
       margin-top: 0.5rem;
+      font-size: 1.3rem;
     }
+
     section {
-      padding: 2rem;
-      max-width: 850px;
+      padding: 2.5rem 1.5rem;
+      max-width: 900px;
       margin: auto;
     }
+
     h3 {
       color: #e96b56;
-      border-bottom: 2px solid #f1da36;
-      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #f1c40f;
+      display: inline-block;
+      margin-bottom: 1rem;
     }
+
+    h4 {
+      color: #e96b56;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p, ul {
+      font-size: 1rem;
+    }
+
     ul {
       list-style: none;
-      padding-left: 1rem;
+      padding-left: 0;
+      margin: 0.5rem 0 1rem 0;
     }
+
     ul li::before {
-      content: "🌴";
-      margin-right: 0.5rem;
+      content: "🌴 ";
     }
-    .contact-box {
-      background: #fff9cc;
-      padding: 1rem;
-      border-radius: 8px;
-      margin-top: 2rem;
-      border-left: 4px solid #f1da36;
+
+    .highlight {
+      background: #fff3c4;
+      border-left: 5px solid #e96b56;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
     }
-    .countdown-box {
-      background: #fffbe6;
-      border-left: 4px solid #e96b56;
-      padding: 1.5rem;
-      border-radius: 8px;
-      margin-top: 2rem;
+
+    .countdown {
+      font-weight: bold;
+      color: #e96b56;
+      font-size: 1.3rem;
     }
+
+    a {
+      color: #e96b56;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
     footer {
       text-align: center;
       padding: 2rem;
-      background-color: #fffbe0;
+      background-color: #fef4c0;
       color: #555;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
     }
+
     @media (max-width: 600px) {
       header h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+      }
+      section {
+        padding: 1.5rem;
       }
     }
   </style>
@@ -81,37 +118,32 @@
   </header>
 
   <section>
-    <div class="countdown-box">
+    <div class="highlight">
       <h3>⏰ Countdown to Sail Away</h3>
-      <p>Can you believe we’re just <span id="days-away">--</span> days away?! Time is flying — which means it’s officially time to book flights, transportation, and lodging for our pre-cruise stay.</p>
-
-      <p><strong>TL;DR 🚢</strong> <span id="days-away-short">--</span> Days ‘Til We Sail!</p>
-
-      <h4>✈️ Flight:</h4>
-      <p><strong>Booked!</strong> Mon, Jan 5 — LAX → FLL (<em>Delta #DL477, 11:30 PM–7:20 AM</em>)</p>
-
-      <h4>🚗 Ride:</h4>
-      <p>Group shuttle from Fort Lauderdale → Miami on Tues, Jan 6. Let me know if you want in!</p>
-
-      <h4>🏡 Stay:</h4>
-      <p>Group Airbnb/hotel for Tues, Jan 6 before we board the ship!</p>
-
-      <p><strong>👉 RSVP by Nov 7th</strong> if you want in for transport from FLL → Miami and/or stay at the group Airbnb.</p>
-
-      <h4>✈️ Return (NOT BOOKED YET):</h4>
-      <ul>
-        <li>JetBlue FLL → LAX (5:29–8:29 PM)</li>
-        <li>Delta MIA → LAX (7:05–10:11 PM)</li>
-      </ul>
-
-      <h4>👚 Coming Soon:</h4>
-      <p>Details for cruise shirts + other gear!</p>
-
-      <h4>💡 Cruise Tips:</h4>
-      <p><a href="https://vvinsider.com/" target="_blank">VV Insider</a></p>
-
-      <p>Can’t wait to sail into 35 with y’all! 🍾⚓️✨</p>
+      <p>Can you believe we’re just <span id="days-away" class="countdown">--</span> days away?! Time is flying — which means it’s officially time to book flights, transportation, and lodging for our pre-cruise stay.</p>
+      <p><strong>TL;DR 🚢</strong> <span id="days-away-short" class="countdown">--</span> Days ‘Til We Sail!</p>
     </div>
+
+    <h3>🛫 Pre-Cruise Plans</h3>
+    <p><strong>✈️ Flight:</strong> Booked! Mon, Jan 5 — LAX → FLL (<em>Delta #DL477, 10:59 PM–6:47 AM</em>)</p>
+    <p><strong>🚗 Ride:</strong> Group shuttle from Fort Lauderdale → Miami on Tues, Jan 6. Let me know if you want in!</p>
+    <p><strong>🏡 Stay:</strong> Group Airbnb/hotel for Tues, Jan 6 before we board the ship!</p>
+    <p><strong>👉 RSVP by Nov 7th</strong> if you want in for transport from FLL → Miami and/or stay at the group Airbnb.</p>
+
+    <h4>✈️ Return (Not Booked Yet):</h4>
+    <ul>
+      <li>JetBlue FLL → LAX (5:29–8:29 PM)</li>
+      <li>Delta MIA → LAX (7:05–10:11 PM)</li>
+    </ul>
+
+    <h4>👚 Coming Soon:</h4>
+    <p>Details for cruise shirts + other gear!</p>
+
+    <h4>💡 Cruise Tips:</h4>
+    <p><a href="https://vvinsider.com/" target="_blank">VV Insider</a></p>
+
+    <h3>🚢 Cruise Overview</h3>
+    <p>Join us on an unforgettable tropical escape as we set sail from Miami to Key West and the Bahamas aboard Virgin Voyages! Expect sunshine, cocktails, beach vibes, and birthday memories that’ll last a lifetime. 🍹☀️</p>
 
     <h3>🛏 Room Options</h3>
     <ul>
@@ -121,14 +153,12 @@
     </ul>
     <p>*Only one credit card can be used for the initial deposit. All future payments can be split among travelers.*</p>
 
-    <div class="contact-box">
-      <h3>💼 Travel Agent Booking Info</h3>
-      <p>Hi! I'm <strong>Callie Larson</strong>, your dedicated travel agent with <strong>Fora Travel</strong>. I’m here to help you book your cruise — completely free of charge! 🙌</p>
-      <p><strong>Phone:</strong> <a href="tel:5415158454">541-515-8454</a><br>
-      <strong>Email:</strong> <a href="mailto:callie.larson@fora.travel">callie.larson@fora.travel</a></p>
-      <p>If you're interested in booking, please reach out and I’ll take care of everything!</p>
-      <p><a href="https://www.virginvoyages.com/book/voyage-planner/pre-checkout?agencyId=15975&agentId=195977&bookingChannel=FMLINK&currencyCode=USD&dateFrom=2026-01-01&dateTo=2026-01-31&durations=1&packageCode=4NKW2&selectedRegions=CARIBBEAN&voyageId=SC2601074NKW2" target="_blank"><strong>Click here to book your cabin directly</strong></a></p>
-    </div>
+    <h3>💼 Travel Agent Booking Info</h3>
+    <p>Hi! I'm <strong>Callie Larson</strong>, your dedicated travel agent with <strong>Fora Travel</strong>. I’m here to help you book your cruise — completely free of charge! 🙌</p>
+    <p><strong>Phone:</strong> <a href="tel:5415158454">541-515-8454</a><br>
+    <strong>Email:</strong> <a href="mailto:callie.larson@fora.travel">callie.larson@fora.travel</a></p>
+    <p>If you're interested in booking, please reach out and I’ll take care of everything!</p>
+    <p><a href="https://www.virginvoyages.com/book/voyage-planner/pre-checkout?agencyId=15975&agentId=195977&bookingChannel=FMLINK&currencyCode=USD&dateFrom=2026-01-01&dateTo=2026-01-31&durations=1&packageCode=4NKW2&selectedRegions=CARIBBEAN&voyageId=SC2601074NKW2" target="_blank">✨ Click here to book your cabin directly ✨</a></p>
   </section>
 
   <footer>
@@ -141,7 +171,7 @@
     function updateCountdown() {
       const now = new Date().getTime();
       const diff = sailDate - now;
-      const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+      const days = Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
       document.getElementById("days-away").textContent = days;
       document.getElementById("days-away-short").textContent = days;
     }
