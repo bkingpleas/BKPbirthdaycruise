@@ -30,7 +30,7 @@
     }
     section {
       padding: 2rem;
-      max-width: 800px;
+      max-width: 850px;
       margin: auto;
     }
     h3 {
@@ -43,7 +43,7 @@
       padding-left: 1rem;
     }
     ul li::before {
-      content: "\1F334"; /* palm tree emoji */
+      content: "🌴";
       margin-right: 0.5rem;
     }
     .contact-box {
@@ -52,6 +52,13 @@
       border-radius: 8px;
       margin-top: 2rem;
       border-left: 4px solid #f1da36;
+    }
+    .countdown-box {
+      background: #fffbe6;
+      border-left: 4px solid #e96b56;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-top: 2rem;
     }
     footer {
       text-align: center;
@@ -70,18 +77,41 @@
 <body>
   <header>
     <h1>BKP's 35th Birthday Cruise!</h1>
-    <h2>🌴 January 7-11, 2026 | Virgin Voyages 🌴</h2>
+    <h2>🌴 January 7–11, 2026 | Miami → Key West → Bahamas 🌴</h2>
   </header>
 
   <section>
-    <h3>🚢 Cruise Overview</h3>
-    <p>Join us on an unforgettable tropical escape as we set sail from Miami to Key West and the Bahamas aboard Virgin Voyages! Expect sunshine, cocktails, beach vibes, and unforgettable birthday memories!</p>
+    <div class="countdown-box">
+      <h3>⏰ Countdown to Sail Away</h3>
+      <p>Can you believe we’re just <span id="days-away">--</span> days away?! Time is flying — which means it’s officially time to book flights, transportation, and lodging for our pre-cruise stay.</p>
 
-    <h3>📅 Key Dates</h3>
-    <ul>
-      <li>Departure: January 7, 2026 - Port of Miami</li>
-      <li>Return: January 11, 2026</li>
-    </ul>
+      <p><strong>TL;DR 🚢</strong> <span id="days-away-short">--</span> Days ‘Til We Sail!</p>
+
+      <h4>✈️ Flight:</h4>
+      <p><strong>Booked!</strong> Mon, Jan 5 — LAX → FLL (<em>Delta #DL477, 10:59 PM–6:47 AM</em>)</p>
+
+      <h4>🚗 Ride:</h4>
+      <p>Group shuttle from Fort Lauderdale → Miami on Tues, Jan 6. Let me know if you want in!</p>
+
+      <h4>🏡 Stay:</h4>
+      <p>Group Airbnb/hotel for Tues, Jan 6 before we board the ship!</p>
+
+      <p><strong>👉 RSVP by Nov 7th</strong> if you want in for transport from FLL → Miami and/or stay at the group Airbnb.</p>
+
+      <h4>✈️ Return (NOT BOOKED YET):</h4>
+      <ul>
+        <li>JetBlue FLL → LAX (5:29–8:29 PM)</li>
+        <li>Delta MIA → LAX (7:05–10:11 PM)</li>
+      </ul>
+
+      <h4>👚 Coming Soon:</h4>
+      <p>Details for cruise shirts + other gear!</p>
+
+      <h4>💡 Cruise Tips:</h4>
+      <p><a href="https://www.virginvoyages.com/voyage-insider" target="_blank">VV Insider</a></p>
+
+      <p>Can’t wait to sail into 35 with y’all! 🍾⚓️✨</p>
+    </div>
 
     <h3>🛏 Room Options</h3>
     <ul>
@@ -90,14 +120,6 @@
       <li>Sea Terrace (Balcony) – starting at $1672 for 2 people</li>
     </ul>
     <p>*Only one credit card can be used for the initial deposit. All future payments can be split among travelers.*</p>
-
-    <h3>🌐 Helpful Links</h3>
-    <ul>
-      <li><a href="https://www.virginvoyages.com/drinks" target="_blank">Bar Tab Info</a></li>
-    </ul>
-
-    <h3>📸 Stay Updated</h3>
-    <p>Brittany has officially booked her cruise! Don't miss out on celebrating our girl and this amazing cruise! Direct booking link is down below!</p>
 
     <div class="contact-box">
       <h3>💼 Travel Agent Booking Info</h3>
@@ -112,5 +134,19 @@
   <footer>
     <p>🌞 Let’s make memories in paradise. Can’t wait to cruise with you! 🌊</p>
   </footer>
+
+  <script>
+    // Countdown to January 7, 2026
+    const sailDate = new Date("January 7, 2026").getTime();
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = sailDate - now;
+      const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+      document.getElementById("days-away").textContent = days;
+      document.getElementById("days-away-short").textContent = days;
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 86400000); // update daily
+  </script>
 </body>
 </html>
